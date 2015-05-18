@@ -38,10 +38,10 @@ class Account extends CI_Controller
       if($valid_user)
       {
         # three values are returned
-        # 1.incorrect credentials, 2.not authorized, 3. Succsessful login
+        # 404.incorrect credentials, 401.not authorized, 200. Succsessful login
 
         switch ($valid_user) {
-          case 1:
+          case 404:
             $data = array(
                 "account" => "login",
                 "login_message" => "Incorrect details",
@@ -51,6 +51,7 @@ class Account extends CI_Controller
             $this->__load_view($data);
 
             break;
+            # continue with team
           
           default:
             # code...
@@ -58,4 +59,16 @@ class Account extends CI_Controller
         }
       }
     }
+
+
+
+    /**
+    * @access public
+    */
+    function logout()
+    {
+
+    }
+
+
 }
