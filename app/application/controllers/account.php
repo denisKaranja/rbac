@@ -21,6 +21,14 @@ class Account extends CI_Controller
     }
 
 
+    /**
+    * @access public
+    */
+    function index()
+    {
+      
+      $this->load->view("login");
+    }
     
     # check username and password privs
     /** 
@@ -48,10 +56,22 @@ class Account extends CI_Controller
                 "class" => "alert alter-danger col-md-offset-3"
               );
 
-            $this->__load_view($data);
+            $this->load->view("login");
 
             break;
             # continue with team
+
+            case 201:
+              $this->load->view("add_post");
+              break;
+
+            case 202:
+              $this->load->view("delete_post");
+              break;
+
+            case 203:
+              $this->load->view("search_post");
+              break;
           
           default:
             # code...
