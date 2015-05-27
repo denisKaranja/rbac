@@ -6,3 +6,6 @@ Role Based Access Control
 * Role Assignment
 * Role Authorization
 
+### Technology
+* CI
+* AngularJS
